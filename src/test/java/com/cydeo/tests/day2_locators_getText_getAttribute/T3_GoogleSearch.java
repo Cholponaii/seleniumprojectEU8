@@ -34,5 +34,6 @@ public class T3_GoogleSearch {
         }else{
             System.out.println("Title verification FAILED!!!");
         }
+        System.out.println();
     }
 }
