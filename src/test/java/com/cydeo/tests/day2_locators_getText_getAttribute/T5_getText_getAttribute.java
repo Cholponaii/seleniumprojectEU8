@@ -30,6 +30,8 @@ public class T5_getText_getAttribute {
             System.out.println("Header text verification FAILED!!!");
         }
         //4- Locate “First name” input box
+        // we are locating the web element using "name" locator
+        //name attribute has "firstname" value
         WebElement firstNameInput = driver.findElement(By.name("firstname"));
 
         //5- Verify placeholder attribute’s value is as expected:
@@ -37,7 +39,13 @@ public class T5_getText_getAttribute {
         String expectedPlaceHolder = "first name";
         String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
 
+        if (actualPlaceHolder.equals(expectedPlaceHolder)){
+            System.out.println("Placeholder text verification PASSED!");
+        }else {
+            System.out.println("Placeholder text verification FAILED!!!");
+        }
 
+driver.close();
 
     }
 }
