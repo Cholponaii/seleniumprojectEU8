@@ -13,10 +13,15 @@ public class T3_getAttribute_cssSelector {
 
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
+
+        if(driver != null) {
             driver.manage().window().maximize();
+
 
             //2- Go to: https://login1.nextbasecrm.com/
             driver.get("https://login1.nextbasecrm.com/");
+
+
             // LOCATED USING VALUE ATTRIBUTE
             WebElement signInButton = driver.findElement(By.cssSelector("input[value='Log In']"));
 
@@ -25,13 +30,13 @@ public class T3_getAttribute_cssSelector {
 
             System.out.println("actualButtonText = " + actualButtonText);
 
-            if (actualButtonText.equals(expectedLogInButton)){
+            if (actualButtonText.equals(expectedLogInButton)) {
                 System.out.println("Log In button text verificition PASSED!");
-            }else {
+            } else {
                 System.out.println("Log In button text verification FAILED!!!");
             }
 
-
+        }
 
 
 
@@ -54,6 +59,7 @@ public class T3_getAttribute_cssSelector {
 
 
 
+        //
 
 
 
