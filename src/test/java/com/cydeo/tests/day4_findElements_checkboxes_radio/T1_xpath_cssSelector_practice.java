@@ -26,7 +26,7 @@ public class T1_xpath_cssSelector_practice {
         WebElement homeLink_ex2 = driver.findElement(By.cssSelector("a.nav-link"));
 
         //Locate homeLink using cssSelector, href value
-        WebElement homelInk_ex3 = driver.findElement(By.cssSelector(""));
+        WebElement homelInk_ex3 = driver.findElement(By.cssSelector("a[href=\"/\"]"));
 
         //b. “Forgot password” header
         //Locate header using cssSelector: locate parent element and move down to h2
