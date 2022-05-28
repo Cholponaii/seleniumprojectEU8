@@ -1,7 +1,9 @@
 package com.cydeo.tests.day4_findElements_checkboxes_radio;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,8 +22,15 @@ public class T6_StaleElement_ReferenceException {
         driver.get("https://practice.cydeo.com/abtest");
 
         //3- Locate “CYDEO” link, verify it is displayed.
+        WebElement CydeoLink = driver.findElement(By.xpath("//a[text()= 'CYDEO']"));
+        System.out.println("CydeoLink.isDisplayed() = " + CydeoLink.isDisplayed());
+
         //4- Refresh the page.
+        driver.navigate().refresh();
+        
         //5- Verify it is displayed, again.
+        System.out.println("CydeoLink.isDisplayed() = " + CydeoLink.isDisplayed());
+
 
     }
 
