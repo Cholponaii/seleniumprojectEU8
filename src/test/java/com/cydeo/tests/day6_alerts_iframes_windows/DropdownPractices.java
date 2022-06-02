@@ -5,12 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class DropdownPractices {
+public class DropdownPractices{
 
     WebDriver driver;
 
@@ -50,19 +51,44 @@ public class DropdownPractices {
         //              getFirstSelectedOption()- means getCurrentlySelectedOption or getSelectedOption
         String actualOptionText = stateDropdown.getFirstSelectedOption().getText();
 
-        Assert.assertEquals(expectedOptionText,actualOptionText);
+        Assert.assertEquals(actualOptionText,expectedOptionText);
     }
     @Test
     public void dropdown_task6(){
 
         //3. Select “December 1st, 1923” and verify it is selected.
-        Select yearDropdown = new Select(driver.findElement(By.xpath("")));
-        Select monthDropdown = new Select(driver.findElement(By.xpath("")));
-        Select dayDropdown = new Select(driver.findElement(By.xpath("")));
+        Select yearDropdown = new Select(driver.findElement(By.xpath("//select[@id='year']")));
+        Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id ='month']")));
+        Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
 
         //Select year using  : visible text
+        yearDropdown.selectByVisibleText("1923");
+
         //Select month using   : value attribute
+        monthDropdown.selectByValue("11");
+
         //Select day using : index number
+        dayDropdown.selectByIndex(0);
+
+        //creating expected values
+        String expectedYear ="1923";
+        String expectedMonth = "December";
+        String expectedDay = "1";
+
+        //getting actaul values from browser
+        String actualYear= yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+
+        //create assertions
+        Assert.assertTrue(actualYear.equals(expectedYear));
+        Assert.assertTrue(actualMonth.equals(expectedMonth));
+        Assert.assertTrue(actualDay.equals(expectedDay));
+    }
+
+    @AfterMethod
+    public void tearDownMethod(){
+        driver.close();
     }
 
 
