@@ -37,7 +37,7 @@ public class T4_SimpleDropdowns {
         WebElement currentlySelectedOption = simpleDropdown.getFirstSelectedOption();
 
         String actualSimpleDropdownText = currentlySelectedOption.getText();
-        String expectedSimpleDropdownText = "Please select an option”;
+        String expectedSimpleDropdownText ="Please select an option";
 
         Assert.assertEquals(actualSimpleDropdownText,expectedSimpleDropdownText);
         //4. Verify “State selection” default selected value is correct
