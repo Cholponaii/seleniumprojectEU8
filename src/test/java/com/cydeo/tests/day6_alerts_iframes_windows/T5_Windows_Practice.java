@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -48,7 +49,11 @@ public class T5_Windows_Practice {
         System.out.println("Title after click: "+actualeTitle);
 
         //6. Switch to new Window.
-      for(String  each : driver.getWindowHandles()){
+        //Set<String> allWindowHandles = driver.getWindowHandles();
+        // window handle 1 - main window
+        // window handle 2 - 2nd window
+
+        for(String  each : driver.getWindowHandles()){
           driver.switchTo().window(each);
           System.out.println("Current Title while switching windows: "+driver.getTitle());
       }
@@ -60,6 +65,11 @@ public class T5_Windows_Practice {
 
         System.out.println("Title after click: "+actualeTitle);
 
+    }
+
+    @AfterMethod
+    public void tearDown(){
+        driver.quit();
     }
 
 
