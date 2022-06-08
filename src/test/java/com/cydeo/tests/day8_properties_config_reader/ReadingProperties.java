@@ -9,10 +9,10 @@ import java.util.Properties;
 public class ReadingProperties {
     @Test
     public void reading_from_properties_test() throws IOException {
-       //create the object of Properties
+       //1-create the object of Properties
         Properties properties = new Properties();
 
-        //we need to open the file in java memory: FileInputStream
+        //2-we need to open the file in java memory: FileInputStream
         FileInputStream file = new FileInputStream("configuration.properties");
 
         //3- Load the properties object using FileInputStream object
