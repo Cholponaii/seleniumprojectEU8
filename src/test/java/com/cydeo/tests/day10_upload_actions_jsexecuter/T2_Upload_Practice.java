@@ -4,6 +4,7 @@ import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class T2_Upload_Practice {
@@ -17,6 +18,11 @@ public class T2_Upload_Practice {
         //2. Find some small file from your computer, and get the path of it.
         String path = "C:\\Users\\hakuna\\Desktop\\HTML Class\\cybertruck.png";
 
+         /*
+        String path ="C:\\Users\\hayat\\Desktop\\note.txt";
+         */
+
+
         //3. Upload the file.
         WebElement fileUpload = Driver.getDriver().findElement(By.id("file-upload"));
 
@@ -25,8 +31,9 @@ public class T2_Upload_Practice {
 
         WebElement uploadButton = Driver.getDriver().findElement(By.id("file-submit"));
         uploadButton.click();
-         WebElement fileUploadedHeader = Driver.getDriver().findElement(By.id("h3"));
+         WebElement fileUploadedHeader = Driver.getDriver().findElement(By.tagName("h3"));
         //4. Assert:
         //-File uploaded text is displayed on the page
+        Assert.assertTrue(fileUploadedHeader.isDisplayed());
     }
 }
