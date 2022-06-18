@@ -24,7 +24,7 @@ public class LibraryLoginPage {
     public WebElement signInButton;
 
     @FindBy(xpath = "//div[@id='inputEmail-error']")
-    public WebElement fieldRequiredMessage;
+    public WebElement fieldRequiredErrorMessage;
 
     @FindBy(xpath = "//div[.= 'Please enter a valid email address.']")
     public WebElement enterValidEmailErrorMessage;
