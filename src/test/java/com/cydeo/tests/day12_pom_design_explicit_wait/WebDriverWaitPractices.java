@@ -33,14 +33,16 @@ public class WebDriverWaitPractices {
 
     @Test
     public void dynmaic_load_1_test(){
-        //TC #3: Library negative login
-        //1- Open a chrome browser
-        //2- Go to: https://library1.cydeo.com
-        Driver.getDriver().get("https://library1.cydeo.com");
+       //TC#5 : Dynamically Loaded Page Elements 1
+        //1. Go to https://practice.cydeo.com/dynamic_loading/1
+        Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/1");
 
-        //3- Enter incorrect username or incorrect password
-        //4- Verify title expected error is displayed:
-        //Expected: Sorry, Wrong Email or Password
-
+        //2. Click to start
+        //3. Wait until loading bar disappears
+        //4. Assert username inputbox is displayed
+        //5. Enter username: tomsmith
+        //6. Enter password: incorrectpassword
+        //7. Click to Submit button
+        //8. Assert “Your password is invalid!” text is displayed.
     }
 }
